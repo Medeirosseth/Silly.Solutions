@@ -5,7 +5,7 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     @Html.ActionLink("View Machines", "index", "Machines", null, new { @class = "btn btn-block btn-primary" })
-
+    @Html.ActionLink("View Engineers", "index", "Engineers", null, new { @class = "btn btn-block btn-primary" })
 
     <div class="container counts">
         <h3> Total Machines: @Model["machines"]</h3>
