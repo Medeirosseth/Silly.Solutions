@@ -1,0 +1,12 @@
+@model Factory.Models.Machine;
+
+<h2>Confirm you would like to remove this Machine</h2>
+
+@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)
+
+@using (Html.BeginForm())
+{
+  @Html.Hidden("id", @Model.MachineId)
+  <input type="submit" value="Remove" class="btn btn-primary"/>
+}
+<p>@Html.ActionLink("Home", "Index")</p>
