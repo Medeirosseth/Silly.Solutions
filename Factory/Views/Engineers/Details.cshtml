@@ -1,3 +1,6 @@
+@{
+  Layout = "_Layout";
+}
 @model Factory.Models.Engineer;
 
 <div class="container"></div>
@@ -14,7 +17,7 @@
     @foreach(var join in Model.JoinEntities)
     {
       <li>@join.Machine.Name</li>
-      @using (Html.BeginForm("DeleteMachines", "Courses"))
+      @using (Html.BeginForm())
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
         <input type="submit" value="Delete"/>
