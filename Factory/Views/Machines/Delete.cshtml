@@ -9,4 +9,4 @@
   @Html.Hidden("id", @Model.MachineId)
   <input type="submit" value="Remove" class="btn btn-primary"/>
 }
-<p>@Html.ActionLink("Home", "Index")</p>
+  @Html.ActionLink("Home", "index", "Home", new { @class = "btn btn-primary" })

@@ -1,0 +1,27 @@
+@model Factory.Models.Engineer;
+
+<div class="container"></div>
+  <h2> Engineer: @Html.DisplayFor(model => model.EngineerName) </h2>
+
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <p> No Engineers in the database</p>
+  }
+
+  <h3>Vending Machines @Html.DisplayFor(model => model.EngineerName) services:</h3>
+
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Machine.Name</li>
+      @using (Html.BeginForm("DeleteMachines", "Courses"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+  @Html.ActionLink("Remove Engineer", "delete", "engineers", new { id = Model.EngineerId }, new { @class = "btn btn-primary" })
+  @Html.ActionLink("Edit Engineer", "edit", "engineers", new { id = Model.EngineerId }, new { @class = "btn btn-primary" })
+  @Html.ActionLink("Home", "index", "Home", new { id = Model.EngineerId }, new { @class = "btn btn-primary" })
+</div>

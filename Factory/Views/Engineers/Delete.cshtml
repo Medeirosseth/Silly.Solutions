@@ -1,0 +1,17 @@
+@model Factory.Models.Engineer
+
+<div class="container">
+  <h2>Confirm you would like to remove this engineer</h2>
+
+  @Html.DisplayNameFor(model => model.EngineerName) : @Html.DisplayFor(model => model.EngineerName)
+
+  @using (Html.BeginForm())
+  {
+    @Html.Hidden("id", @Model.EngineerId)
+    <input type="submit" value="Delete" class="btn">
+  }
+</div>
+ 
+ 
+ 
+  @Html.ActionLink("Home", "index", "Home", new { @class = "btn btn-primary" })

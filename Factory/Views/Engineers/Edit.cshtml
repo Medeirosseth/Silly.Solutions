@@ -1,0 +1,18 @@
+ @model Factory.Models.Engineer;
+
+ <div class="container">
+   <h2>Edit Engineer "@Html.DisplayFor(model => model.EngineerName)"</h2>
+
+   @using (Html.BeginForm("edit", "engineer", new { @id = @Model.EngineerId }, FormMethod.Post))
+   {
+     @Html.HiddenFor(model => model.EngineerId)
+
+     @Html.LabelFor(model => model.EngineerName)
+     @Html.TextBoxFor(model => model.EngineerName)
+
+     <input type="submit" value="save" class="btn">
+   }
+
+ </div>
+ 
+  @Html.ActionLink("Home", "index", "Home", new { @class = "btn btn-primary" })
