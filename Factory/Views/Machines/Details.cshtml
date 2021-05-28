@@ -1,0 +1,13 @@
+@model Factory.Models.Machine;
+
+<div class="container">
+  <h2>Vending Machine Details:</h2>
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Beverage): @Html.DisplayFor(model => model.Beverage)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Food): @Html.DisplayFor(model => model.Food)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Retail): @Html.DisplayFor(model => model.Retail)</h3>
+  <h3>@Html.DisplayNameFor(model => model.LastInspection): @Html.DisplayFor(model => model.LastInspection)</h3>
+</div>
+
+@Html.ActionLink("Remove Machine", "Delete", "Machines", new { id = Model.MachineId }, new { @class = "btn btn-primary" })
+@Html.ActionLink("Edit Machine", "Edit", "Machines", new { id = Model.MachineId }, new { @class = "btn btn-primary" })
