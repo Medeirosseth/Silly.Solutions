@@ -1,0 +1,39 @@
+@model Factory.Models.Machine;
+
+<div class="container">
+  <h3>Add a vending machine to the database</h3>
+  <div class="container content">
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, "text", new { @required = "required"})
+      <br>
+
+      @Html.Label("Beverages")
+      @Html.RadioButtonFor(model => model.Beverage, "True", new { @id="beverage_yes" })
+      @Html.LabelFor(model => model.Beverage, "Yes")
+      @Html.RadioButtonFor(model => model.Beverage, "False", new { @id="beverage_no" })
+      @Html.LabelFor(model => model.Beverage, "No")
+      <br>
+
+      @Html.Label("Food")
+      @Html.RadioButtonFor(model => model.Food, "True", new { @id="food_yes" })
+      @Html.LabelFor(model => model.Food, "Yes")
+      @Html.RadioButtonFor(model => model.Food, "False", new { @id="food_no" })
+      @Html.LabelFor(model => model.Food, "No")
+      <br>
+
+      @Html.Label("Retail")
+      @Html.RadioButtonFor(model => model.Retail, "True", new { @id="retail_yes" })
+      @Html.LabelFor(model => model.Retail, "Yes")
+      @Html.RadioButtonFor(model => model.Retail, "False", new { @id="retail_no" })
+      @Html.LabelFor(model => model.Retail, "No")
+      <br>
+
+      @Html.LabelFor(model => model.LastInspection)
+      @Html.TextBoxFor(model => model.LastInspection, new { @type = "date", @required="required" })
+
+      <input type="submit" value="Add Machine" class="btn">
+    }
+  </div>
+</div>
