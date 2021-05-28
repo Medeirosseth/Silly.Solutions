@@ -1,0 +1,47 @@
+@model Factory.Models.Machine;
+
+<h2>Edit Vending Machine</h2>
+
+<h4> Edit this Machine: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm("edit", "machine", new { @id = @Model.MachineId }, FormMethod.Post))
+{
+  @Html.HiddenFor(model => model.MachineId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+   <div class="form-group">
+    @Html.Label("Beverage")
+    @Html.RadioButtonFor(model => model.Beverage, "True", new { @id="beverage_yes" })
+    @Html.LabelFor(model => model.Beverage, "Yes")
+    @Html.RadioButtonFor(model => model.Beverage, "False", new { @id="beverage_no" })
+    @Html.LabelFor(model => model.Beverage, "No")
+  </div>
+
+   <div class="form-group">
+    @Html.Label("Food")
+    @Html.RadioButtonFor(model => model.Food, "True", new { @id="food_yes" })
+    @Html.LabelFor(model => model.Food, "Yes")
+    @Html.RadioButtonFor(model => model.Food, "False", new { @id="food_no" })
+    @Html.LabelFor(model => model.Food, "No")
+  </div>
+
+   <div class="form-group">
+    @Html.Label("Retail")
+    @Html.RadioButtonFor(model => model.Retail, "True", new { @id="retail_yes" })
+    @Html.LabelFor(model => model.Retail, "Yes")
+    @Html.RadioButtonFor(model => model.Retail, "False", new { @id="retail_no" })
+    @Html.LabelFor(model => model.Retail, "No")
+  </div>
+
+  <div>
+    @Html.LabelFor(model => model.LastInspection)
+    @Html.TextBoxFor(model => model.LastInspection, new { @type = "date", @required="required" })
+  </div>
+
+  @Html.Label("Engineers")
+  @Html.DropDownList("EngineerId")
+  <br>
+  <input type="submit" value="Save" class="btn btn-primary" />
+}

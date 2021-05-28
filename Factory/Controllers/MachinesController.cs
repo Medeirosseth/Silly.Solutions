@@ -52,5 +52,41 @@ namespace Factory.Controllers
       .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
+
+    [HttpGet("machine/edit/{id}")]
+    public ActionResult Edit(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
+      return View(thisMachine);
+    }
+
+    [HttpPost("/machine/edit/{id}"), ActionName("Edit")]
+    public ActionResult Edit(Machine machine, int engineerId)
+    {
+      if (engineerId != 0)
+      {
+        _db.EngineerMachines.Add(new EngineerMachine() {EngineerId = engineerId, MachineId = machine.MachineId});
+      }
+      _db.Entry(machine).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("index");
+    }
+
+    [HttpGet("/machine/delete/{id}")]
+    public ActionResult Delete(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisMachine = _db.Machines.First(machine => machine.MachineId == id);
+      _db.Machines.Remove(thisMachine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
