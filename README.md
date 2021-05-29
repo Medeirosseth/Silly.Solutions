@@ -1,4 +1,4 @@
-#### :sparkles:Silly Strings:sparkles:
+#### :sparkles:Silly Strings Vending Machines :sparkles:
 
 #### By _**:neckbeard:Seth Medeiros**_
 
