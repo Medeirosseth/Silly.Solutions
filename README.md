@@ -14,6 +14,7 @@
 ## Description:memo:
 
 _This project was designed to practice building basic web applications with C# using mysql databases, many to many relationships, and the MVC model._
+![ScreenShot](/SQLchart.png)
 
 ## Setup and Use
 
