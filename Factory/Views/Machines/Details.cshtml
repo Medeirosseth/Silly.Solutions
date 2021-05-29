@@ -1,4 +1,5 @@
 @model Factory.Models.Machine;
+@using Factory.Models;
 
 <div class="container">
   <h2>Vending Machine Details:</h2>
@@ -8,6 +9,27 @@
   <h3>@Html.DisplayNameFor(model => model.Retail): @Html.DisplayFor(model => model.Retail)</h3>
   <h3>@Html.DisplayNameFor(model => model.LastInspection): @Html.DisplayFor(model => model.LastInspection)</h3>
 
+  <h3>Assigned tech</h3>
+
+  @if (Model.JoinEntities.Count == 0)
+  {
+    <p>This machine has not been provided a technician</p>
+  }
+  else
+  {
+    <h3>Machine Technician:</h3>
+    <ul>
+      @foreach (var join in Model.JoinEntities)
+      {
+        <li>@Html.ActionLink($"{@join.Engineer.EngineerName}", "Details", "Engineers", new {id = join.Engineer.EngineerId}) @using (Html.BeginForm("delete", "engineers")) 
+          {
+            @Html.Hidden("Id", @join.EngineerMachineId)
+            <input type="submit" value="remove from machine"/>
+          }
+        </li>
+      }
+    </ul>
+  }
 
 </div>
 
