@@ -8,6 +8,7 @@
   <div class="container content">
     @using (Html.BeginForm())
     {
+      <p>
       @Html.LabelFor(model => model.Name)
       @Html.TextBoxFor(model => model.Name, "text", new { @required = "required"})
       <br>
@@ -33,10 +34,11 @@
       @Html.LabelFor(model => model.Retail, "No")
       <br>
 
-      @Html.LabelFor(model => model.LastInspection)
+      @Html.Label("Last inspection:")
       @Html.TextBoxFor(model => model.LastInspection, new { @type = "date", @required="required" })
       <br>
       <input type="submit" value="Add Machine" class="btn">
+      </p>
     }
   </div>
    @Html.ActionLink("Home", "index", "Home", new { @class = "btn btn-primary" })

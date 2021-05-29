@@ -7,3 +7,36 @@ h1,
 h3 {
   font-family: "Noteable";
 }
+
+.navBox .navBoxTwo {
+  float: left;
+  border: solid #000000;
+}
+
+a:hover {
+  font-size: larger;
+  font-weight: bolder;
+  color: palegreen;
+}
+
+.img {
+  float: right;
+}
+
+.counts {
+  color: rgb(73, 130, 199);
+  margin-top: 30%;
+}
+
+.centerText,
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}

@@ -3,25 +3,24 @@
 }
 @using Factory.Models; 
 
-<div class="container">
-  <h2>vending Machines</h2>
-  <div class="container content">
-    @if(@Model.Count == 0)
-    {
-      <p>No vending machines have been added to the database</p>
-    }
-    else
-    {
-      <ul>
-        @foreach( Machine machine in Model)
-        {
-          <li>
-            @Html.ActionLink($"{machine.Name}", "Details", "Machines", new {id = machine.MachineId }, new {@class = "btn btn-primary"})
-          </li>
-        }
-      </ul>
-    }
-  </div>
-  @Html.ActionLink("Add Vending Machine", "Create", "Machines", null, new { @class = "btn btn-primary" })
-  @Html.ActionLink("Home", "index", "Home", new { @class = "btn btn-primary" })
+<div class="centerText">
+  <h2>vending Machines we currently service</h2>
+  @if(@Model.Count == 0)
+  {
+    <p>No vending machines have been added to the database</p>
+  }
+  else
+  {
+    <ul>
+      @foreach( Machine machine in Model)
+      {
+        <li>
+          @Html.ActionLink($"{machine.Name}", "Details", "Machines", new {id = machine.MachineId }, new {@class = "btn btn-primary"})
+        </li>
+      }
+    </ul>
+  }
+  @Html.ActionLink("Add Vending Machine", "Create", "Machines", null, new { @class = "btn btn-dark" })
+  <br>
+  @Html.ActionLink("Home", "index", "Home", new { @class = "btn btn-dark" })
 </div>
