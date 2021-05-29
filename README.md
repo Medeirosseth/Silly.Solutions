@@ -2,6 +2,8 @@
 
 #### By _**:neckbeard:Seth Medeiros**_
 
+![image of vending machines](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLVDwbKYLbbdbKJxSz_9wcD1EKgnCYc5HcoMOGmdlATr54RuvCLi4mCb9H9fxVDxxuYCQ&usqp=CAU)
+
 ## Technologies Used
 
 - _HTML_
